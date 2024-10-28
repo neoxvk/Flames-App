@@ -59,6 +59,10 @@ input.form-control:hover{
   position: relative;
 }
 
+.flames-btn:hover{
+   transform: scale(1.0905);
+}
+
 
 /* creating overlay  */
 .flames-btn::after {
