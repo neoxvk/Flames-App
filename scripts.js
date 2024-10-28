@@ -15,8 +15,13 @@ this.querySelector("span").textContent = "Magic's Happening....";
     //Resetthe animation after 3 seconds
     setTimeout(() => {
       calculateFLAMES();
+      setTimeout(()=> (
+              this.querySelector("span").textContent = "Try Again?"
+    
+      ),1500)
+            this.querySelector("span").textContent = "Not Happy? No Problem!"
+     
 
-      this.querySelector("span").textContent = "Try Again?";
       this.classList.remove("animate")
     }, 3000);
 
