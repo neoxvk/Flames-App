@@ -1,4 +1,32 @@
-function calculateFLAMES(){
+//Animation for the Button
+
+document.getElementById("animateBtn").addEventListener("click", function () {
+  if(document.getElementById("name1").value === "" || document.getElementById("name2").value === ""){
+    alert("Please enter both names.")
+  }
+  else{
+    this.querySelector("span").textContent = "Uncovering your fate!";
+    this.classList.add("animate");
+    setTimeout(()=>{
+this.querySelector("span").textContent = "Magic's Happening....";
+    },1000)
+    
+
+    //Resetthe animation after 3 seconds
+    setTimeout(() => {
+      calculateFLAMES();
+
+      this.querySelector("span").textContent = "Try Again?";
+      this.classList.remove("animate")
+    }, 3000);
+
+  }
+  
+});
+
+
+
+function calculateFLAMES() {
   // Get the two names from input and do the pre-processing (lowercase + remove spaces)
   let name1 = document
     .getElementById("name1")

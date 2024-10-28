@@ -13,11 +13,12 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-button.btn-primary {
+/* button.btn-primary {
   background-color: #007bff;
   border-color: #007bff;
   transition: transform 0.3s ease;
-}
+  
+} */
 
 button.btn-primary:hover {
   transform: scale(1.0905);
@@ -25,4 +26,66 @@ button.btn-primary:hover {
 
 input.form-control:hover{
     transform: scale(1.01)
+}
+
+.gradient-text{
+  background: linear-gradient(90deg, #ef3507 , #213cd4);
+   background-clip: text;
+  -webkit-background-clip: text;
+ 
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 38px;
+  font-weight: bold;
+
+}
+
+/* animation for button */
+.flames-btn {
+  width: auto;
+  height: 40px;
+  background-color: #557dba;
+  border: none;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* creating overlay  */
+.flames-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: green;
+  transition: width 3s linear;
+  z-index: 0;
+}
+
+.flames-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.flames-btn.animate::after{
+  width: 100%;
+}
+
+.flames-btn.try-again::after{
+  background-color: #ef3507;
+  width: 0%;
+  transition: width 3s linear;
+}
+
+.result{
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-variant: small-caps;
+  color: rgb(0, 0, 0);
 }
